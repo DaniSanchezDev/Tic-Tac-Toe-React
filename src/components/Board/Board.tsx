@@ -7,10 +7,11 @@ type BoardProps = {
 }
 
 function Board({ board }: BoardProps) {
-    return (
-        board.map(row => row.map(cell => <Cell cell={cell} />)
 
-        )
+    return (
+        <div className='board'>
+            {board.map(row => row.map(cell => <Cell cell={cell} />))}
+        </div>
     )
 }
 
