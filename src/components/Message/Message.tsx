@@ -1,6 +1,13 @@
-function Message() {
+import { PLAYER_1 } from '../../App';
+import './Message.css';
+
+type MessageProps = {
+  turn: number;
+}
+
+function Message({ turn } : MessageProps) {
   return (
-    <h2>Player 1 (X)</h2>
+    turn === PLAYER_1 ? <h2>Player 1 (X)</h2> : <h2>Player 2 (O)</h2>
   )
 }
 

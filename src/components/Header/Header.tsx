@@ -2,14 +2,17 @@ import Message from "../Message";
 import Title from "../Title";
 import "./Header.css";
 
-function Header() {
-    
-    return(
+type HeaderProps = {
+    turn: number;
+};
+
+function Header({ turn }: HeaderProps) {
+    return (
         <>
             <Title />
-            <Message />
+            <Message turn={turn}/>
         </>
-    )
+    );
 }
 
 export default Header;

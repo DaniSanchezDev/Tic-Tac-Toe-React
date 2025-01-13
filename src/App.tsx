@@ -4,8 +4,8 @@ import Header from './components/Header'
 import NewGameButton from './components/NewGameButton'
 
 
-const PLAYER_1 = 1;
-const PLAYER_2 = 2;
+export const PLAYER_1 = 1;
+export const PLAYER_2 = 2;
 
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
 
   return (
     <div className='game'>
-      <Header />
+      <Header turn={turn}/>
       <NewGameButton />
 
     </div>
