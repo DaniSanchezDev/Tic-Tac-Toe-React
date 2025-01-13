@@ -1,3 +1,4 @@
+import Cell from '../Cell';
 import './Board.css'
 
 //tipo para el tablero

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import Header from './components/Header'
 import NewGameButton from './components/NewGameButton'
+import Board from './components/Board';
 
 
 export const PLAYER_1 = 1;
@@ -10,7 +11,7 @@ export const PLAYER_2 = 2;
 export const EMPTY = 0;
 
 function App() {
-  
+
 // marcamos el inicio del turno 
   const [turn, setTurn] = useState(PLAYER_1);
 
@@ -31,6 +32,7 @@ function App() {
   return (
     <div className='game'>
       <Header turn={turn} />
+      <Board board={board}/>
       <NewGameButton />
 
     </div>
