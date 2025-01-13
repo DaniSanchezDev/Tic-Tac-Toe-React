@@ -1,4 +1,3 @@
-
 import './App.css'
 import Header from './components/Header'
 import NewGameButton from './components/NewGameButton'
@@ -6,10 +5,10 @@ import NewGameButton from './components/NewGameButton'
 function App() {
 
   return (
-    <>
+    <div className='game'>
       <Header />
       <NewGameButton />
-    </>
+    </div>
   )
 }
 
