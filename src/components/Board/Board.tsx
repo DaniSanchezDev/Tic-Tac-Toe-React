@@ -13,7 +13,7 @@ function Board({ board, onClickCell }: BoardProps) {
         <div className='board'>
             {board.map((row, rowIndex) => 
                 row.map((cell, cellIndex) => 
-                <Cell cell={cell} onClick={() => onClickCell(rowIndex, cellIndex)} />))}
+                <Cell key={`cell-${rowIndex}-${cellIndex}`} cell={cell} onClick={() => onClickCell(rowIndex, cellIndex)} />))}
         </div>
     )
 }
