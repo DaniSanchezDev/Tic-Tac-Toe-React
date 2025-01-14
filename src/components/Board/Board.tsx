@@ -7,11 +7,13 @@ type BoardProps = {
     onClickCell: (row: number, column: number) => void;
 }
 
-function Board({ board }: BoardProps) {
+function Board({ board, onClickCell }: BoardProps) {
 
     return (
         <div className='board'>
-            {board.map(row => row.map(cell => <Cell cell={cell} />))}
+            {board.map((row, rowIndex) => 
+                row.map((cell, cellIndex) => 
+                <Cell cell={cell} onClick={() => onClickCell(rowIndex, cellIndex)} />))}
         </div>
     )
 }
