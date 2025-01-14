@@ -20,10 +20,27 @@ function App() {
     [EMPTY, EMPTY, EMPTY],
     [EMPTY, EMPTY, EMPTY],
     [EMPTY, EMPTY, EMPTY],
-  ])
+  ]);
 
 
   const generateTurn = () => Math.floor(Math.random() * 2) + 1;
+
+  const changeTurn = () =>{
+    if(turn === PLAYER_1){
+      setTurn(PLAYER_2);
+    } else {
+      setTurn(PLAYER_1);
+    }
+  }
+
+  const clickCell = (row: number, column: number) => {
+    if(board[row][column] !== EMPTY){
+      return;
+    }else {
+      board[row][column] = turn;
+      changeTurn();
+    }
+  }
 
   useEffect(() => {
     setTurn(generateTurn());
@@ -32,7 +49,7 @@ function App() {
   return (
     <div className='game'>
       <Header turn={turn} />
-      <Board board={board}/>
+      <Board board={board} onClickCell={clickCell}/>
       <NewGameButton />
 
     </div>

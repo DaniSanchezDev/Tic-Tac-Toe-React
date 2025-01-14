@@ -4,6 +4,7 @@ import './Board.css'
 //tipo para el tablero
 type BoardProps = {
     board: number[][];
+    onClickCell: (row: number, column: number) => void;
 }
 
 function Board({ board }: BoardProps) {
