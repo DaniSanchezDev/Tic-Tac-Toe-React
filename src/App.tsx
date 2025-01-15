@@ -64,19 +64,32 @@ function App() {
     ]);
   }
 
+  const checkValues = (values: number[]) => {
+    if(values.every(value => value === PLAYER_1)) {
+      setWinner(PLAYER_1)
+    } else if (values.every(value => value === PLAYER_2)) {
+      setWinner(PLAYER_2);
+    }
+
+  }
+
   function checkWinner(board: number[][]){
-    if(winner === null && board.every(row => row.every(cell => cell !== EMPTY))){
+    if(winner !== null || board.every(row => row.every(cell => cell !== EMPTY))){
       setWinner(DRAW);
       return
     } 
+    //Filas
+    board.forEach(row => checkValues(row));
 
-    const checkValues = (values: number[]) => {
-      if(values.every(value => value === PLAYER_1)) {
-        setWinner(PLAYER_1)
-      } else if (values.every(value => value === PLAYER_2)) {
-        setWinner(PLAYER_2);
-      }
+    //Columnas
+    for (let index = 0; index < board.length; index++) {
+      checkValues([board[0][index], board[1][index], board[2][index]]);
+      
     }
+    
+    //Diagonales
+    checkValues([board[0][0], board[1][1], board[2][2]]);
+    checkValues([board[0][2], board[1][1], board[2][0]]);
   }
 
   useEffect(() => {
