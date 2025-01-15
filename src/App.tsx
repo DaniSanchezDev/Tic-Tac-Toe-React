@@ -47,6 +47,9 @@ function App() {
       newBoard[row][column] = turn;
       // Seteamos el board con el nuevo tablero
       setBoard(newBoard);
+      // Comprobamos si hay ganador
+      checkWinner(newBoard);
+      // Cambiamos turno
       changeTurn();
     
   }
@@ -63,7 +66,7 @@ function App() {
 
   function checkWinner(board: number[][]){
     if(winner === null && board.every(row => row.every(cell => cell !== EMPTY))){
-
+      setWinner(DRAW);
     }
   }
 
