@@ -4,13 +4,14 @@ import "./Header.css";
 
 type HeaderProps = {
     turn: number;
+    winner: null | number;
 };
 
-function Header({ turn }: HeaderProps) {
+function Header({ turn, winner }: HeaderProps) {
     return (
         <>
             <Title />
-            <Message turn={turn}/>
+            <Message turn={turn} winner={winner}/>
         </>
     );
 }

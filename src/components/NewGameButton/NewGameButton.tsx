@@ -1,9 +1,13 @@
 import './NewGameButton.css'
 
-function NewGameButton() {
+type NewGameProps ={
+  onClick: () => void;
+};
+
+function NewGameButton({onClick}: NewGameProps) {
   return (
     <div>
-        <button type='button'>New game</button>
+        <button type='button' onClick={onClick}>New game</button>
     </div>
   )
 }
