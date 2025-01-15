@@ -61,6 +61,12 @@ function App() {
     ]);
   }
 
+  function checkWinner(board: number[][]){
+    if(winner === null && board.every(row => row.every(cell => cell !== EMPTY))){
+
+    }
+  }
+
   useEffect(() => {
     setTurn(generateTurn());
   }, [])
