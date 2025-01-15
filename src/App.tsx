@@ -67,6 +67,15 @@ function App() {
   function checkWinner(board: number[][]){
     if(winner === null && board.every(row => row.every(cell => cell !== EMPTY))){
       setWinner(DRAW);
+      return
+    } 
+
+    const checkValues = (values: number[]) => {
+      if(values.every(value => value === PLAYER_1)) {
+        setWinner(PLAYER_1)
+      } else if (values.every(value => value === PLAYER_2)) {
+        setWinner(PLAYER_2);
+      }
     }
   }
 
